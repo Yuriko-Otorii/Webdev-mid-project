@@ -1,0 +1,545 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li{
+  list-style: none;
+}
+
+hr{
+  margin: 4em auto;
+}
+
+header {
+  width: 100%;
+  height: 3em;
+  padding-top: 0.8em;
+  background-color: #3b6064;
+  text-align: center;
+}
+
+header .title {
+  font-family: "Aboreto", cursive;
+  color: #ffffff;
+  font-size: 1.6em;
+  text-align: center;
+  position: relative;
+}
+
+.title a {
+  color: #ffffff;
+}
+
+aside{
+  display: none;
+}
+ 
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail {
+  width: 20em;
+  padding: 1.5em 1.5em 0 1.5em; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.product-img {
+  width: 15em;
+  height: 15em;
+  background-image: url(./images/frenchbull.jpg);
+  background-position: 50% 85%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 2em 0  1em 0;
+}
+
+.product-contents .product-name{
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-left: .8em;
+}
+
+.product-detail .description {
+  width: 100%;
+  padding: 1em 1em 0 1em;
+}
+
+.price-review{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-detail .price {
+  width: 100%;
+  padding: .7em .5em .5em .8em;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.product-detail .review {
+  width: 100%;
+  font-size: 1em;
+  color: #4c4c4c;
+  padding: 1.3em 0 .7em 2.2em;
+}
+
+.open {
+	cursor:pointer;
+  width: 50%;
+  height: 2em;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #3b6064;
+  display: flex;
+  justify-content: center;
+  margin: 1em auto 2em;
+  border: .12em solid #3b6064;
+  padding: .3em;
+}
+
+.open:hover{
+  background-color: #3b6064;
+  color: #ffffff;
+}
+
+#pop-up {
+	display: none;
+}
+
+.click {
+	display: none;
+}
+
+#pop-up:checked + .click {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.window {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 90vw;
+	max-width: 20em;
+  padding: 3em 1em 1em 1em;
+	height: 20em;
+	background-color: #fff;
+	align-items: center;
+	transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.close {
+  font-size: 1.5em;
+	position: absolute;
+	top: .5em;
+	right: .7em;
+	cursor:pointer;
+}
+
+.added-message  {
+  font-weight: bold;
+  font-size: 1.6em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.close-message{
+  font-size: 1em;
+}
+
+.successfully-added-icon{
+  width: 6em;
+  height: 6em;
+  background-image: url(./images/kirakira-dog-icon.gif);
+  background-size: cover;
+  margin-top: 2em;
+}
+
+.recommend-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 1em;
+}
+
+.recommend-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 5em auto;
+}
+
+.each-recommend{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommend-img1{
+  width: 15em;
+  height: 15em;
+  background-image: url(./images/maltese.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.recommend-img2{
+  width: 15em;
+  height: 15em;
+  margin-top: 4em;
+  background-image: url(./images/corgie.jpg);
+  background-position: 45% 85%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.recommend-img3{
+  width: 15em;
+  height: 15em;
+  margin-top: 4em;
+  background-image: url(./images/fancy-dog.jpg);
+  background-position: 30% 85%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.content{
+  margin-bottom: 1em;
+}
+
+.each-recommend .price{
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.each-recommend .review{
+  font-size: 1.5em;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  display: flex;
+  height: 2em;
+  width: 2em;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #3b6064;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 18px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-contents {
+  width: 55%;
+  height: 60%;
+  position: fixed;
+  top: 100%;
+  right: 0;
+  z-index: 80;
+  background-color: #3b6064f6;
+  transition: all 0.5s;
+}
+
+.menu-contents ul {
+  padding: 6em 1em 2em;
+}
+
+.menu-contents ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+  padding: 1.3em 0.5em 0;
+}
+
+.menu-contents ul li a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#menu-btn-check:checked ~ .menu-contents {
+  top: 0;
+}
+
+footer{
+  height: 10em;
+  background-color: #3b6064;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-menu{
+  width: 80%;
+  font-size: .5em;
+  color: #ffffff;
+  margin: 2em 2em 2em 5em;
+  line-height: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-menu p{
+  width: 10em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+.sns-icons{
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: .2em auto;
+}
+
+.icon{
+  margin: 0 .5em 0;
+}
+
+.insta {
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(./images/instagram-icon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.facebook {
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(./images/facebook-icon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.twitter {
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(./images/twitter-icon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.youtube {
+  width: 1.2em;
+  height: 1.2em;
+  background-image: url(./images/youtube-icon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.copyrigh{
+  font-size: .1em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 8em;
+}
+
+@media screen and (min-width: 768px) {
+  main{
+    display: block;
+  }
+  
+  .body-container{
+    margin: 2em;
+  }
+
+  .product-detail {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3em;
+    }
+
+  .product-contents{
+    width: 50%;
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .product-detail .product-name{
+    padding: 0 0 1em 0;
+  }
+
+  .product-detail .description{
+    padding: 0;
+  }
+
+  .product-detail .price{
+    padding: .7em 1.3em .5em 0;
+  }
+
+
+  .product-img {
+    width: 15em;
+    height: 15em;
+    margin: 0 2em 0 0;
+  }
+
+  .open {
+    margin-top: 3em;
+  }
+
+  .recommend-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .recommend-img1{
+    width: 10em;
+    height: 10em;
+  }
+
+  .recommend-img2{
+    width: 10em;
+    height: 10em;
+    margin-top: 0;
+  }
+
+  .recommend-img3{
+    width: 10em;
+    height: 10em;
+    margin-top: 0;
+  }
+
+  .footer-menu {
+    width: 70%;
+    margin: 4em auto 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer-menu p{
+    text-align: center;
+  }
+
+  .sns-icons{
+    margin: 1em auto .5em;
+  }
+  
+  h3{
+    font-size: 1.5em;
+  }
+
+@media screen and (min-width: 1025px) {
+  .product-contents{
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .recommend-img1{
+    width: 13em;
+    height: 13em;
+  }
+
+  .recommend-img2{
+    width: 13em;
+    height: 13em;
+    margin-top: 0;
+  }
+
+  .recommend-img3{
+    width: 13em;
+    height: 13em;
+    margin-top: 0;
+  }
+
+
+  nav{
+    display: none;
+  }
+
+  .body-container{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+  }
+
+  aside{
+    position: fixed;
+    height: 13em;
+    display:flex;
+    margin: 4em 0 0 3em;
+    flex-direction: column;
+    padding: .5em;
+    border:solid .2em;
+    border-color:white #f4f4f4 white #f4f4f4;
+  }
+
+  aside a{
+    display:block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 2em;
+    white-space: nowrap;
+  }
+}
+
+
+} 
+
