@@ -435,7 +435,7 @@ footer{
   .product-img {
     width: 15em;
     height: 15em;
-    margin: 0 2em 0 0;
+    margin: 2em 5em 1em 0;
   }
 
   .open {
@@ -491,6 +491,10 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .product-img{
+    margin: 2em 5em 1em 0;
   }
 
   .recommend-img1{
